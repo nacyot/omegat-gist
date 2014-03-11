@@ -1,14 +1,15 @@
-14. 1. 12 오후 2:17
+14. 3. 11 오전 11:50
 Project Statistics
 
                  	Segments	Words	Characters (without spaces)	Characters (including spaces)	
-Total:           	     145	 1627	                      10613	                        11721	
-Remaining:       	       0	    0	                          0	                            0	
-Unique:          	     143	 1625	                      10594	                        11700	
-Unique Remaining:	       0	    0	                          0	                            0	
+Total:           	     155	 1734	                      11240	                        12409	
+Remaining:       	      17	  204	                       1344	                         1454	
+Unique:          	     153	 1732	                      11221	                        12388	
+Unique Remaining:	      17	  204	                       1344	                         1454	
 
 
 Individual File Statistics:
 
-File Name      	Total Segments	Remaining Segments	Unique Segments	Unique Remaining Segments	Total Words	Remaining Words	Unique Words	Unique Remaining Words	Total Characters (without spaces)	Remaining Characters (without spaces)	Unique Characters (without spaces)	Unique Remaining Characters (without spaces)	Total Characters (including spaces)	Remaining Characters (including spaces)	Unique Characters (including spaces)	Unique Remaining Characters (including spaces)	
-docker_cheat.md	           145	                 0	            143	                        0	       1627	              0	        1625	                     0	                            10613	                                    0	                             10594	                                           0	                              11721	                                      0	                               11700	                                             0	
+File Name                        	Total Segments	Remaining Segments	Unique Segments	Unique Remaining Segments	Total Words	Remaining Words	Unique Words	Unique Remaining Words	Total Characters (without spaces)	Remaining Characters (without spaces)	Unique Characters (without spaces)	Unique Remaining Characters (without spaces)	Total Characters (including spaces)	Remaining Characters (including spaces)	Unique Characters (including spaces)	Unique Remaining Characters (including spaces)	
+docker-cheetsheet/.git           	             1	                 1	              1	                        1	          5	              5	           5	                     5	                               50	                                   50	                                50	                                          50	                                 51	                                     51	                                  51	                                            51	
+docker-cheetsheet/docker_cheat.md	           154	                16	            152	                       16	       1729	            199	        1727	                   199	                            11190	                                 1294	                             11171	                                        1294	                              12358	                                   1403	                               12337	                                          1403	
