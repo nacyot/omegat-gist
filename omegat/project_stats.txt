@@ -1,0 +1,14 @@
+14. 1. 12 오후 2:17
+Project Statistics
+
+                 	Segments	Words	Characters (without spaces)	Characters (including spaces)	
+Total:           	     145	 1627	                      10613	                        11721	
+Remaining:       	       0	    0	                          0	                            0	
+Unique:          	     143	 1625	                      10594	                        11700	
+Unique Remaining:	       0	    0	                          0	                            0	
+
+
+Individual File Statistics:
+
+File Name      	Total Segments	Remaining Segments	Unique Segments	Unique Remaining Segments	Total Words	Remaining Words	Unique Words	Unique Remaining Words	Total Characters (without spaces)	Remaining Characters (without spaces)	Unique Characters (without spaces)	Unique Remaining Characters (without spaces)	Total Characters (including spaces)	Remaining Characters (including spaces)	Unique Characters (including spaces)	Unique Remaining Characters (including spaces)	
+docker_cheat.md	           145	                 0	            143	                        0	       1627	              0	        1625	                     0	                            10613	                                    0	                             10594	                                           0	                              11721	                                      0	                               11700	                                             0	

@@ -1,0 +1,6 @@
+environment	환경
+repeatability	재사용
+Containers	컨테이너
+Virtual Machine	가상 머신
+Virtual Machines	가상 머신
+Container	컨테이너

@@ -1,0 +1,1278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tmx SYSTEM "tmx11.dtd">
+<tmx version="1.1">
+  <header creationtool="OmegaT" o-tmf="OmegaT TMX" adminlang="EN-US" datatype="plaintext" creationtoolversion="3.0.4_2" segtype="sentence" srclang="JA"/>
+  <body>
+<!-- Default translations -->
+    <tu>
+      <tuv lang="JA">
+        <seg># Docker Cheat Sheet</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T024348Z" creationid="hsin" creationdate="20140111T024348Z">
+        <seg># Docker 치트 시트</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Containers</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T120404Z" creationid="hsin" creationdate="20140111T025747Z">
+        <seg>## 컨테이너</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Dockerfile</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103406Z" creationid="hsin" creationdate="20140111T103406Z">
+        <seg>## Dockerfile</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Exposing ports</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114605Z" creationid="hsin" creationdate="20140111T114605Z">
+        <seg>## 포트 노출하기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Images</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031809Z" creationid="hsin" creationdate="20140111T031757Z">
+        <seg>## Docker 이미지</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Installation</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025407Z" creationid="hsin" creationdate="20140111T025407Z">
+        <seg>## 설치</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Layers</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103944Z" creationid="hsin" creationdate="20140111T103944Z">
+        <seg>## 레이어</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Links</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104130Z" creationid="hsin" creationdate="20140111T104130Z">
+        <seg>## 링크</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Prequisites</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025322Z" creationid="hsin" creationdate="20140111T025322Z">
+        <seg>## 필요한 것들</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Registry &amp; Repository</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032912Z" creationid="hsin" creationdate="20140111T032907Z">
+        <seg>## 레지스트리(Registry) &amp; 저장소(Repository)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## TL;DR, I just want a dev environment</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025245Z" creationid="hsin" creationdate="20140111T025245Z">
+        <seg>## TL;DR, 지금 바로 Docker 개발 환경 구축하기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Tips</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113727Z" creationid="hsin" creationdate="20140111T113724Z">
+        <seg>## 팁</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Volumes</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104310Z" creationid="hsin" creationdate="20140111T104310Z">
+        <seg>## 볼륨</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>## Why</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T024456Z" creationid="hsin" creationdate="20140111T024456Z">
+        <seg>## 왜 Docker를 사용해야하는가?</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Commit with command (needs Dockerfile)</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115054Z" creationid="hsin" creationdate="20140111T115054Z">
+        <seg>### 명령어와 함께 커밋하기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Delete old containers</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113834Z" creationid="hsin" creationdate="20140111T113818Z">
+        <seg>### 오래된 컨테이너들 삭제하기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Delete stopped containers</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113831Z" creationid="hsin" creationdate="20140111T113831Z">
+        <seg>### 멈춰있는 컨테이너들 삭제하기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Get Environment Settings</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115132Z" creationid="hsin" creationdate="20140111T115109Z">
+        <seg>### 이미지의 환경 변수 읽어오기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Get IP address</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113745Z" creationid="hsin" creationdate="20140111T113745Z">
+        <seg>### IP address 정보</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Import / Export</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031703Z" creationid="hsin" creationdate="20140111T031703Z">
+        <seg>### Import / Export</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Info</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032743Z" creationid="hsin" creationdate="20140111T031321Z">
+        <seg>### 관련된 정보를 출력해주는 명령어</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Last Ids</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114922Z" creationid="hsin" creationdate="20140111T114919Z">
+        <seg>### 마지막에 실행된 컨테이너의 ID</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Lifecycle</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030448Z" creationid="hsin" creationdate="20140111T030448Z">
+        <seg>### 라이프 사이클</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>### Show image dependencies</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113848Z" creationid="hsin" creationdate="20140111T113848Z">
+        <seg>### 이미지의 의존관계 이미지로 출력하기</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>(49000..49900).each do |port|</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104318Z" creationid="hsin" creationdate="20140111T104318Z">
+        <seg>(49000..49900).each do |port|</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>(kind of odd, you'd think images would be immutable after create)
+* [`docker load`](http://docs.docker.io/en/latest/commandline/cli/#load) loads an image from a tar archive as STDIN, including images and tags (as of 0.7).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032450Z" creationid="hsin" creationdate="20140111T032313Z">
+        <seg>* [`docker load`](http://docs.docker.io/en/latest/commandline/cli/#load) 표준 입력으로 tar 파일에서 (이미지와 태그를 포함한) 이미지를 불러온다.(0.7부터 사용가능).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [15 Docker Tips in 5 minutes](http://sssslide.com/speakerdeck.com/bmorearty/15-docker-tips-in-5-minutes)</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113729Z" creationid="hsin" creationdate="20140111T113729Z">
+        <seg>* [15 Docker Tips in 5 minutes](http://sssslide.com/speakerdeck.com/bmorearty/15-docker-tips-in-5-minutes)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [A Docker Dev Environment in 24 Hours!](http://blog.relateiq.com/a-docker-dev-environment-in-24-hours-part-2-of-2/)
+* [Building a Development Environment With Docker](http://tersesystems.com/2013/11/20/building-a-development-environment-with-docker/)
+* [Discourse in a Docker Container](http://samsaffron.com/archive/2013/11/07/discourse-in-a-docker-container)</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T120251Z" creationid="hsin" creationdate="20140111T025247Z">
+        <seg>* [24시간 동안 Docker 개발 한경 구축하기(A Docker Dev Environment in 24 Hours!)](http://blog.relateiq.com/a-docker-dev-environment-in-24-hours-part-2-of-2/)
+* [(Docker와 함께 개발환경 구축하기)Building a Development Environment With Docker](http://tersesystems.com/2013/11/20/building-a-development-environment-with-docker/)
+* [Docker 컨테이너에 대한 이야기(Discourse in a Docker Container)](http://samsaffron.com/archive/2013/11/07/discourse-in-a-docker-container)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [Dockerfile tutorial, level 1](http://www.docker.io/learn/dockerfile/level1/)
+* [Dockerfile tutorial, level 2](http://www.docker.io/learn/dockerfile/level2/)</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103532Z" creationid="hsin" creationdate="20140111T103532Z">
+        <seg>* [Dockerfile tutorial, level 1](http://www.docker.io/learn/dockerfile/level1/)
+* [Dockerfile tutorial, level 2](http://www.docker.io/learn/dockerfile/level2/)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker attach`](http://docs.docker.io/en/latest/commandline/cli/#attach) will connect to a running container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030721Z" creationid="hsin" creationdate="20140111T030721Z">
+        <seg>* [`docker attach`](http://docs.docker.io/en/latest/commandline/cli/#attach) 실행중인 컨테이너에 접속한다. </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker build`](http://docs.docker.io/en/latest/commandline/cli/#build) creates image from Dockerfile.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032003Z" creationid="hsin" creationdate="20140111T032003Z">
+        <seg>* [`docker build`](http://docs.docker.io/en/latest/commandline/cli/#build) Dockerfile을 통해 이미지를 생성한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker commit`](http://docs.docker.io/en/latest/commandline/cli/#commit) creates image from a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032011Z" creationid="hsin" creationdate="20140111T032011Z">
+        <seg>* [`docker commit`](http://docs.docker.io/en/latest/commandline/cli/#commit) 컨테이너에서 이미지를 생성한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker cp`](http://docs.docker.io/en/latest/commandline/cli/#cp) copies into a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031727Z" creationid="hsin" creationdate="20140111T031727Z">
+        <seg>* [`docker cp`](http://docs.docker.io/en/latest/commandline/cli/#cp) 컨테이너 내의 파일을 호스트로 복사한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker diff`](http://docs.docker.io/en/latest/commandline/cli/#diff) shows changed files in the container's FS.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031644Z" creationid="hsin" creationdate="20140111T031644Z">
+        <seg>* [`docker diff`](http://docs.docker.io/en/latest/commandline/cli/#diff) 컨테이너 파일 시스템에서 변경된 파일들을 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker events`](http://docs.docker.io/en/latest/commandline/cli/#events) gets events from container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031435Z" creationid="hsin" creationdate="20140111T031435Z">
+        <seg>* [`docker events`](http://docs.docker.io/en/latest/commandline/cli/#events) 컨테이너로부터 이벤트를 가져온다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker export`](http://docs.docker.io/en/latest/commandline/cli/#export) turns container fs into tarball.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031748Z" creationid="hsin" creationdate="20140111T031748Z">
+        <seg>* [`docker export`](http://docs.docker.io/en/latest/commandline/cli/#export) 컨테이너 파일 시스템을 tarball로 출력한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker history`](http://docs.docker.io/en/latest/commandline/cli/#history) shows history of image.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032756Z" creationid="hsin" creationdate="20140111T032739Z">
+        <seg>* [`docker history`](http://docs.docker.io/en/latest/commandline/cli/#history) 이미지의 이력 정보를 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker images`](http://docs.docker.io/en/latest/commandline/cli/#images) shows all images.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031941Z" creationid="hsin" creationdate="20140111T031941Z">
+        <seg>* [`docker images`](http://docs.docker.io/en/latest/commandline/cli/#images) 모든 이미지 목록을 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker import`](http://docs.docker.io/en/latest/commandline/cli/#import) creates an image from a tarball.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031954Z" creationid="hsin" creationdate="20140111T031954Z">
+        <seg>* [`docker import`](http://docs.docker.io/en/latest/commandline/cli/#import) tarball 파일로부터 이미지를 생성한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker insert`](http://docs.docker.io/en/latest/commandline/cli/#insert) inserts a file from URL into image.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032056Z" creationid="hsin" creationdate="20140111T032056Z">
+        <seg>* [`docker insert`](http://docs.docker.io/en/latest/commandline/cli/#insert) URL에서 이미지로 파일을 집어넣는다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker inspect`](http://docs.docker.io/en/latest/commandline/cli/#inspect) looks at all the info on a container (including IP address).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031420Z" creationid="hsin" creationdate="20140111T031420Z">
+        <seg>* [`docker inspect`](http://docs.docker.io/en/latest/commandline/cli/#inspect) ip 주소를 포함한 특정 컨테이너에 대한 모든 정보를 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker kill`](http://docs.docker.io/en/latest/commandline/cli/#kill) sends a SIGKILL to a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030622Z" creationid="hsin" creationdate="20140111T030622Z">
+        <seg>* [`docker kill`](http://docs.docker.io/en/latest/commandline/cli/#kill) 컨테이너에게 SIGKILL을 보낸다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker login`](http://docs.docker.io/en/latest/commandline/cli/#login) to login to a registry.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103236Z" creationid="hsin" creationdate="20140111T103212Z">
+        <seg>* [`docker login`]() 레지스트리에 로그인한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker logs`](http://docs.docker.io/en/latest/commandline/cli/#logs) gets logs from container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031428Z" creationid="hsin" creationdate="20140111T031428Z">
+        <seg>* [`docker logs`](http://docs.docker.io/en/latest/commandline/cli/#logs) 컨테이너로부터 로그를 가져온다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker port`](http://docs.docker.io/en/latest/commandline/cli/#port) shows public facing port of container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031552Z" creationid="hsin" creationdate="20140111T031549Z">
+        <seg>* [`docker port`](http://docs.docker.io/en/latest/commandline/cli/#port) 컨테이너의 특정 포트가 어디로 연결되어있는지 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker ps`](http://docs.docker.io/en/latest/commandline/cli/#ps) shows running containers.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031403Z" creationid="hsin" creationdate="20140111T031323Z">
+        <seg>* [`docker ps`](http://docs.docker.io/en/latest/commandline/cli/#ps) 명령어는 실행중인 컨테이너 목록을 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker pull`](http://docs.docker.io/en/latest/commandline/cli/#pull) pulls an image from registry to local machine.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103355Z" creationid="hsin" creationdate="20140111T103327Z">
+        <seg>* [`docker pull`](http://docs.docker.io/en/latest/commandline/cli/#pull) 이미지를 레지스트리에서 로컬 머신으로 가져온다(pull).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker push`](http://docs.docker.io/en/latest/commandline/cli/#push) pushes an image to the registry from local machine.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103358Z" creationid="hsin" creationdate="20140111T103340Z">
+        <seg>* [`docker push`](http://docs.docker.io/en/latest/commandline/cli/#push) 이미지를 로컬 머신에서 레지스트리에 집어넣는다(push).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker restart`](http://docs.docker.io/en/latest/commandline/cli/#restart) restarts a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030543Z" creationid="hsin" creationdate="20140111T030526Z">
+        <seg>* [`docker restart`](http://docs.docker.io/en/latest/commandline/cli/#restart) 컨테이너를 재가동한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker rm`](http://docs.docker.io/en/latest/commandline/cli/#rm) deletes a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030550Z" creationid="hsin" creationdate="20140111T030550Z">
+        <seg>* [`docker rm`](http://docs.docker.io/en/latest/commandline/cli/#rm) 컨테이너를 삭제한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker rmi`](http://docs.docker.io/en/latest/commandline/cli/#rmi) removes an image.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032018Z" creationid="hsin" creationdate="20140111T032018Z">
+        <seg>* [`docker rmi`](http://docs.docker.io/en/latest/commandline/cli/#rmi) 이미지를 삭제한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker run`](http://docs.docker.io/en/latest/commandline/cli/#run) creates a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030454Z" creationid="hsin" creationdate="20140111T030454Z">
+        <seg>* [`docker run`](http://docs.docker.io/en/latest/commandline/cli/#run) 컨테이너를 생성한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker save`](http://docs.docker.io/en/latest/commandline/cli/#save) saves an image to a tar archive stream to STDOUT with all parent layers, tags &amp; versions (as of 0.7).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032553Z" creationid="hsin" creationdate="20140111T032332Z">
+        <seg>* [`docker save`](http://docs.docker.io/en/latest/commandline/cli/#save) 모든 부모 레이어와 태그, 버전 정보를 tar 형식으로 표준출력을 통해  @@@ (0.7부터 사용가능).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker search`](http://docs.docker.io/en/latest/commandline/cli/#search) searches registry for image.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103313Z" creationid="hsin" creationdate="20140111T103309Z">
+        <seg>* [`docker search`](http://docs.docker.io/en/latest/commandline/cli/#search) 레지스트리에서 이미지를 검색한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker start`](http://docs.docker.io/en/latest/commandline/cli/#start) will start it again.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030534Z" creationid="hsin" creationdate="20140111T030522Z">
+        <seg>* [`docker start`](http://docs.docker.io/en/latest/commandline/cli/#start) 컨테이너를 다시 실행시킨다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker stop`](http://docs.docker.io/en/latest/commandline/cli/#stop) stops it.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030508Z" creationid="hsin" creationdate="20140111T030508Z">
+        <seg>* [`docker stop`](http://docs.docker.io/en/latest/commandline/cli/#stop) 컨테이너를 정지시킨다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker tag`](http://docs.docker.io/en/latest/commandline/cli/#tag) tags an image to a name (local or registry).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032852Z" creationid="hsin" creationdate="20140111T032852Z">
+        <seg>* [`docker tag`](http://docs.docker.io/en/latest/commandline/cli/#tag) 이미지에 이름으로 태그를 붙여준다(local 혹은 registry).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker top`](http://docs.docker.io/en/latest/commandline/cli/#top) shows running processes in container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031606Z" creationid="hsin" creationdate="20140111T031606Z">
+        <seg>* [`docker top`](http://docs.docker.io/en/latest/commandline/cli/#top) 컨테이너에서 실행중인 프로세스를 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* [`docker wait`](http://docs.docker.io/en/latest/commandline/cli/#wait) blocks until container stops.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030739Z" creationid="hsin" creationdate="20140111T030739Z">
+        <seg>* [`docker wait`](http://docs.docker.io/en/latest/commandline/cli/#wait) 컨테이너가 멈출 때까지 블럭한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* __Containers are not limited to running a single command or process.__  You can use [supervisord](http://docs.docker.io/en/latest/examples/using_supervisord/) or [runit](https://github.com/phusion/baseimage-docker).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030432Z" creationid="hsin" creationdate="20140111T030432Z">
+        <seg>* __컨테이너에서 오직 하나의 명령어나 커맨드만 실행시킨다는 것은 잘못된 생각이다.__ [supervisord](http://docs.docker.io/en/latest/examples/using_supervisord/)나 [runit](https://github.com/phusion/baseimage-docker)를 사용할 수 있다..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>* __Containers are not transient__.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030047Z" creationid="hsin" creationdate="20140111T030047Z">
+        <seg>* __컨테이넌 일시적으로 작동하지 않는다__.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>...</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113722Z" creationid="hsin" creationdate="20140111T113722Z">
+        <seg>...</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>...
+end
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113720Z" creationid="hsin" creationdate="20140111T113720Z">
+        <seg>...
+end
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>&gt; "Docker interests me because it allows simple environment isolation and repeatability.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115552Z" creationid="hsin" creationdate="20140111T024905Z">
+        <seg>&gt; "나에게 Docker의 매력은 간단히 격리된 환경을 만들 수 있다는 것과, 그러한 환경을 재사용할 수 있다는 점이다."</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>A registry is a *host* -- a server that stores repositories and provides an HTTP API for [managing the uploading and downloading of repositories](http://docs.docker.io/en/latest/use/workingwithrepository/).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103038Z" creationid="hsin" creationdate="20140111T102838Z">
+        <seg>레지스트리란 저장소를 저장해두고 HTTP API를 통해 [저장소의 업로드, 관리, 다운로드]()를 제공하는 호스트를 의미한다. @@@</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>A repository is a *hosted* collection of tagged images that together create the file system for a container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T102950Z" creationid="hsin" creationdate="20140111T102950Z">
+        <seg>저장소(repository)란 컨테이너를 위한 파일 시스템을 생성할 수 있는 호스트되는 태그가 붙어있는 이미지들의 집합.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>And best of all, everything is fast and simple."</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115719Z" creationid="hsin" creationdate="20140111T025151Z">
+        <seg>무엇보다도 이런 모든 일들이 빠르고 간단히 가능하다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>And you can connect to it that way.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114354Z" creationid="hsin" creationdate="20140111T114354Z">
+        <seg>이를 통해 연결할 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Best to look at [http://github.com/wsargent/docker-devenv](http://github.com/wsargent/docker-devenv) and the [best practices](http://crosbymichael.com/dockerfile-best-practices.html) for more details.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103941Z" creationid="hsin" creationdate="20140111T103941Z">
+        <seg>[http://github.com/wsargent/docker-devenv](http://github.com/wsargent/docker-devenv)를 추천한다. 더 자세한 내용은 [best practices](http://crosbymichael.com/dockerfile-best-practices.html)  이 글을 추천한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Containers are to Virtual Machines as threads are to processes.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T120425Z" creationid="hsin" creationdate="20140111T025933Z">
+        <seg>컨테이너와 가상 머신 간의 관계는 쓰레드와 프로세스 간의 관계와 비슷하다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Docker volumes are [free-floating filesystems](http://docs.docker.io/en/latest/use/working_with_volumes/).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114433Z" creationid="hsin" creationdate="20140111T114433Z">
+        <seg>Docker의 볼륨은 [유동적인 파일시스템](http://docs.docker.io/en/latest/use/working_with_volumes/)이다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Docker.io hosts its own [index](https://index.docker.io/) to a central registry which contains a large number of repositories.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103217Z" creationid="hsin" creationdate="20140111T103033Z">
+        <seg>Docker.io는 매우 다양한 저장소를 포함하고 있는 이미지 [index]를 가지고 있는 중앙 레지스트리이다. @@@</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Exposing ports through the host container is [fiddly but doable](http://docs.docker.io/en/latest/use/port_redirection/#binding-a-port-to-an-host-interface).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115343Z" creationid="hsin" creationdate="20140111T115332Z">
+        <seg>포트를 노출시키는 일은 [귀찮지만 유용하다](http://docs.docker.io/en/latest/use/port_redirection/#binding-a-port-to-an-host-interface).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>First expose the port in your Dockerfile:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114618Z" creationid="hsin" creationdate="20140111T114618Z">
+        <seg>먼저 Dockerfile에서 포트를 노출시킨다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>For instance, if you need to have two docker instances communicate by leaving stuff on the filesystem.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115512Z" creationid="hsin" creationdate="20140111T114558Z">
+        <seg>예를 들어 두 Docker 인스턴스에서 파일 시스템으로부터 떨어져서 통신을 해야하는 경우가 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Furthermore, everything that runs in that environment is isolated from the underlying host (much like a virtual machine).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115659Z" creationid="hsin" creationdate="20140111T025126Z">
+        <seg>또한 여기서 실행되는 모든 것은 마치 가상머신과 같이 호스트로부터 격리되어있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>I can create a run-time environment once, package it up, then run it again on any other machine.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115601Z" creationid="hsin" creationdate="20140111T024939Z">
+        <seg>런타임 환경을 한 번 만들어 패키지로 만들면, 이 패키지를 다른 어떤 머신에서도 다시 사용할 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you forget what you mapped the port to on the host container, use `docker port` to show it:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114830Z" creationid="hsin" creationdate="20140111T114830Z">
+        <seg>만약 포트가 어디로 연결되었는지 기억이 안 난다면 `docker port` 명령어를 사용할 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you have a container with the name CONTAINER (specified by `docker run -name CONTAINER`) and in the Dockerfile, it has an exposed port:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114120Z" creationid="hsin" creationdate="20140111T114113Z">
+        <seg>예를 들어 CONTAINER이라는 이름을 가진 컨테이너가 있다고 하자(`docker run -name CONTAINER`). 이 컨테이너는 Dockerfile에서 port를 아래와 같이 노출시킨다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you want a transient container, `docker run -rm` will remove the container after it stops.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030900Z" creationid="hsin" creationdate="20140111T030900Z">
+        <seg>일시적인 컨테이너를 생성하고자 할 때는 `docker run -rm` 명렁어를 사용해 컨테이너를 생성할 수 있다. 이 컨테이너는 멈춰지면 삭제된다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you want to expose container ports through the host, see the [exposing ports](https://gist.github.com/wsargent/7049221#exposing-ports) section.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031317Z" creationid="hsin" creationdate="20140111T031317Z">
+        <seg>컨테이너의 포트를 호스트 쪽으로 열어 주고자 할 때는 [exposing ports](https://gist.github.com/wsargent/7049221#exposing-ports)을 참조하면 된다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you want to integrate a container with a [host process manager](http://docs.docker.io/en/latest/use/host_integration/), start the daemon with `-r=false` then use `docker start -a`.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031232Z" creationid="hsin" creationdate="20140111T031232Z">
+        <seg>컨테이너를 [host process manager](http://docs.docker.io/en/latest/use/host_integration/)와 통합하고자 할 때는 Dockre 데몬을`-r=false` 옵션으로 실행시키고 `docker start -a` 명령어를 실행하면 된다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you want to map a directory on the host to a docker container, `docker run -v $HOSTDIR:$DOCKERDIR` (also see Volumes section).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031105Z" creationid="hsin" creationdate="20140111T031105Z">
+        <seg>호스트의 디렉토리와 Docker 컨테이너 디렉토리를 맵핑하고자 할 때는 `docker run -v $HOSTDIR:$DOCKERDIR` 명령어를 사용할 수 있다(also see Volumes section).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you want to poke around in an image, `docker run -t -i &lt;myshell&gt;` to open a tty.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031008Z" creationid="hsin" creationdate="20140111T031008Z">
+        <seg>이미지 안을 뒤질 필요가 있을 때는 `docker run -t -i &lt;myshell&gt;` 명령어로 tty를 열 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you want to run and then interact with a container, `docker start` then `docker attach` to get in.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030820Z" creationid="hsin" creationdate="20140111T030820Z">
+        <seg>컨테이너를 실행하고 컨테이너에 접속하고자 할 때는 `docker start` 명령어를 실행하고 `docker attach` 명령어를 실행한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>If you're running Docker in Virtualbox, you then need to forward the port there as well.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114712Z" creationid="hsin" creationdate="20140111T114712Z">
+        <seg>Docker가 가상 머신에서 실행중이라면 추가적인 포트포워딩을 해줘야한다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Images are just [templates for docker containers](http://docker.readthedocs.org/en/latest/terms/image/).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031913Z" creationid="hsin" creationdate="20140111T031913Z">
+        <seg>이미지는 그저 [Docker 컨테이너의 템플릿](http://docker.readthedocs.org/en/latest/terms/image/)이다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>In the VM:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T120347Z" creationid="hsin" creationdate="20140111T025615Z">
+        <seg>가상 머신 내부에서:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Install VirtualBox and Vagrant using [Brew Cask](https://github.com/phinze/homebrew-cask).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025458Z" creationid="hsin" creationdate="20140111T025444Z">
+        <seg>[Brew Cask](https://github.com/phinze/homebrew-cask)를 사용해 VirtualBox와 Vagrant 설치.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>It can be useful to define something in Vagrantfile to expose a range of ports so that you can dynamically map them:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114741Z" creationid="hsin" creationdate="20140111T114741Z">
+        <seg>이러한 설정을 할 때는 Vagrantfile을 통해서 특정 범위의 포트를 노출시켜 동적으로 맵핑하는 게 편리하다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Links are how Docker containers talk to each other [through TCP/IP ports](http://docs.docker.io/en/latest/use/working_with_links_names/).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104234Z" creationid="hsin" creationdate="20140111T104234Z">
+        <seg>Docker 컨테이너들이 [TCP/IP ports](http://docs.docker.io/en/latest/use/working_with_links_names/)으로 링크를 통해 서로 정보를 주고받는다..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>NOTE: If you want containers to ONLY communicate with each other through links, start the docker daemon with `-icc=false` to disable inter process communication.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114004Z" creationid="hsin" creationdate="20140111T114004Z">
+        <seg>참고 : 만약 컨테이너들 간에 오직 링크를 통해서만 통신을 허용하고 싶다면 Docker 데몬을 실행할 때 `icc=false` 옵션을 통해 프로세스간 통신을 막을 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Or you can think of them as chroots on steroids.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030000Z" creationid="hsin" creationdate="20140111T030000Z">
+        <seg>아니면 스테로이드 주사를 맞은 chroot라고도 생각할 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>See [advanced volumes](http://crosbymichael.com/advanced-docker-volumes.html) for more details.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115236Z" creationid="hsin" creationdate="20140111T115236Z">
+        <seg>더 자세한 사항은 [advanced volumes](http://crosbymichael.com/advanced-docker-volumes.html) 페이지를 참고해주세요.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>See [bug](https://github.com/dotcloud/docker/issues/1141).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032727Z" creationid="hsin" creationdate="20140111T032727Z">
+        <seg>[bug](https://github.com/dotcloud/docker/issues/1141) 참조.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Sets up a Docker container when you run `docker build` on it.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103500Z" creationid="hsin" creationdate="20140111T103500Z">
+        <seg>`docker build` 명령어를 통해서 Docker 컨테이너를 만들어낸다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Some common misconceptions it's worth correcting:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030013Z" creationid="hsin" creationdate="20140111T030013Z">
+        <seg>몇 가지 오해가 있다면:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Sources:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114837Z" creationid="hsin" creationdate="20140111T114833Z">
+        <seg>참고:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>That's it, you have a running Docker container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025742Z" creationid="hsin" creationdate="20140111T025742Z">
+        <seg>설치는 이게 전부다. 마지막 명령어를 통해 Docker 컨테이너 하나가 실행되었다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>The [versioned filesystem](http://en.wikipedia.org/wiki/Aufs) in Docker is based on layers.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104038Z" creationid="hsin" creationdate="20140111T104038Z">
+        <seg>Docker에서 [버전화된 파일 시스템은](http://en.wikipedia.org/wiki/Aufs) 레이어에 기반하고 있다..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Then if we create another container called LINKED like so:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114148Z" creationid="hsin" creationdate="20140111T114148Z">
+        <seg>그리고 다음과 같이 LINKED라고 이름붙여진 또 다른 컨테이너를 만든다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Then map the container port to the host port:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114637Z" creationid="hsin" creationdate="20140111T114637Z">
+        <seg>그리고 `docker run` 명령어를 통해서 컨테이너의 포트와 호스트의 포트를 맵핑시킨다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Then the exposed ports and aliases of CONTAINER will show up in LINKED with the following environment variables:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114325Z" creationid="hsin" creationdate="20140111T114325Z">
+        <seg>노출된 포트와 CONTAINER의 별칭이 아래와 같이 LINKED 컨테이너의 환경변수로 나타난다: </seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>They don't have to be connected to a particular container.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114459Z" creationid="hsin" creationdate="20140111T114459Z">
+        <seg>볼륨은 특정 컨테이너에 연결되어있지 않아도 된다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>They're like [git commits or changesets for filesystems](http://docker.readthedocs.org/en/latest/terms/layer/).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104127Z" creationid="hsin" creationdate="20140111T104121Z">
+        <seg>이는 [파일 시스템을 위한 git commits나 차분](http://docker.readthedocs.org/en/latest/terms/layer/)이라고 생각할 수 있다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>To delete links, use `docker rm -link `.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114347Z" creationid="hsin" creationdate="20140111T114347Z">
+        <seg>이 링크를 삭제하려면 `docker rm -link` 명령어를 사용하면 된다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Use [Homebrew](http://brew.sh/).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025448Z" creationid="hsin" creationdate="20140111T025337Z">
+        <seg>[Homebrew](http://brew.sh/) 설치.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Vastly preferable to `docker commit`.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103529Z" creationid="hsin" creationdate="20140111T103529Z">
+        <seg>또한 `docker commit` 명령어보다 추천되는 명령어이다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Verify:</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025632Z" creationid="hsin" creationdate="20140111T025632Z">
+        <seg>제대로 작동하는 지 확인:</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>Volumes are useful in situations where you can't use links (which are TCP/IP only).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T114532Z" creationid="hsin" creationdate="20140111T114532Z">
+        <seg>볼륨은 TCP/IP를 통한 링크가 사용가능한 환경에서 유용하다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>We use the pre-built vagrant box: [http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/](http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/)</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025602Z" creationid="hsin" creationdate="20140111T025602Z">
+        <seg>여기서는 미리 준비한 vagrant 박스를 사용한다: [http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/](http://blog.phusion.nl/2013/11/08/docker-friendly-vagrant-boxes/)</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>You can mount them in several docker containers at once, using `docker run -volume-from`</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T115224Z" creationid="hsin" creationdate="20140111T115224Z">
+        <seg>먼저 이것들을 docker 컨테이너에 동시에 마운트 하고 `docker run -volume-from` 명령어를 실행합니다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>[Has issues](https://github.com/dotcloud/docker/issues/197).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030654Z" creationid="hsin" creationdate="20140111T030654Z">
+        <seg>[이에 관련된 이슈가 있다.](https://github.com/dotcloud/docker/issues/197).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>[Linking into Redis](http://docs.docker.io/en/latest/examples/linking_into_redis/) and [Atlassian](http://blogs.atlassian.com/2013/11/docker-all-the-things-at-atlassian-automation-and-wiring/) show worked examples.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104258Z" creationid="hsin" creationdate="20140111T104258Z">
+        <seg>[Redis로 링크 걸기](http://docs.docker.io/en/latest/examples/linking_into_redis/) and [Atlassian](http://blogs.atlassian.com/2013/11/docker-all-the-things-at-atlassian-automation-and-wiring/)에서는 어떻게 작동되는지 예제를 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>[The configuration file](http://docs.docker.io/en/latest/use/builder/#dockerbuilder).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T103421Z" creationid="hsin" creationdate="20140111T103421Z">
+        <seg>[Docker 설정 파일](http://docs.docker.io/en/latest/use/builder/#dockerbuilder).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>[Why Should I Care (For Developers)](https://www.docker.io/the_whole_story/#Why-Should-I-Care-\(For-Developers\))</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T024457Z" creationid="hsin" creationdate="20140111T024457Z">
+        <seg>[Why Should I Care (For Developers)](https://www.docker.io/the_whole_story/#Why-Should-I-Care-\(For-Developers\))</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>[Your basic isolated Docker process](http://docker.readthedocs.org/en/latest/terms/container/#container-def).</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025805Z" creationid="hsin" creationdate="20140111T025805Z">
+        <seg>[Your basic isolated Docker process](http://docker.readthedocs.org/en/latest/terms/container/#container-def).</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+$ALIAS_PORT_1337_TCP_PORT
+$ALIAS_PORT_1337_TCP_ADDR
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104307Z" creationid="hsin" creationdate="20140111T104307Z">
+        <seg>```
+$ALIAS_PORT_1337_TCP_PORT
+$ALIAS_PORT_1337_TCP_ADDR
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+EXPOSE 1337
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104301Z" creationid="hsin" creationdate="20140111T104301Z">
+        <seg>```
+EXPOSE 1337
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+EXPOSE &lt;CONTAINERPORT&gt;
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104314Z" creationid="hsin" creationdate="20140111T104314Z">
+        <seg>```
+EXPOSE &lt;CONTAINERPORT&gt;
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104316Z" creationid="hsin" creationdate="20140111T104316Z">
+        <seg>```
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+alias dl='docker ps -l -q'
+docker run ubuntu echo hello world
+docker commit `dl` helloworld
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113736Z" creationid="hsin" creationdate="20140111T113736Z">
+        <seg>```
+alias dl='docker ps -l -q'
+docker run ubuntu echo hello world
+docker commit `dl` helloworld
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew cask install virtualbox
+brew cask install vagrant
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025459Z" creationid="hsin" creationdate="20140111T025459Z">
+        <seg>```
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew cask install virtualbox
+brew cask install vagrant
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker commit -run='{"Cmd":["postgres", "-too -many -opts"]}' `dl` postgres
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113737Z" creationid="hsin" creationdate="20140111T113737Z">
+        <seg>```
+docker commit -run='{"Cmd":["postgres", "-too -many -opts"]}' `dl` postgres
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker images -viz | dot -Tpng -o docker.png
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113838Z" creationid="hsin" creationdate="20140111T113838Z">
+        <seg>```
+docker images -viz | dot -Tpng -o docker.png
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker inspect `dl` | grep IPAddress | cut -d '"' -f 4
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113746Z" creationid="hsin" creationdate="20140111T113746Z">
+        <seg>```
+docker run -i -t ubuntu /bin/bash
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker port CONTAINER $CONTAINERPORT
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113724Z" creationid="hsin" creationdate="20140111T113724Z">
+        <seg>```
+docker port CONTAINER $CONTAINERPORT
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113819Z" creationid="hsin" creationdate="20140111T113819Z">
+        <seg>```
+docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker rm `docker ps -a -q`
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113835Z" creationid="hsin" creationdate="20140111T113835Z">
+        <seg>```
+docker rm `docker ps -a -q`
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker run -d -link CONTAINER:ALIAS -name LINKED user/wordpress
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104306Z" creationid="hsin" creationdate="20140111T104306Z">
+        <seg>```
+docker run -d -link CONTAINER:ALIAS -name LINKED user/wordpress
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker run -i -t ubuntu /bin/bash
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025633Z" creationid="hsin" creationdate="20140111T025633Z">
+        <seg>```
+docker run -i -t ubuntu /bin/bash
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker run -p $HOSTPORT:$CONTAINERPORT -name CONTAINER -t someimage
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104315Z" creationid="hsin" creationdate="20140111T104315Z">
+        <seg>```
+docker run -p $HOSTPORT:$CONTAINERPORT -name CONTAINER -t someimage
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+docker run -rm ubuntu env 
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113811Z" creationid="hsin" creationdate="20140111T113811Z">
+        <seg>```
+docker run -rm ubuntu env 
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+mkdir mydockerbox
+cd mydockerbox
+vagrant init docker https://oss-binaries.phusionpassenger.com/vagrant/boxes/ubuntu-12.04.3-amd64-vbox.box
+vagrant up
+vagrant ssh
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025604Z" creationid="hsin" creationdate="20140111T025604Z">
+        <seg>```
+mkdir mydockerbox
+cd mydockerbox
+vagrant init docker https://oss-binaries.phusionpassenger.com/vagrant/boxes/ubuntu-12.04.3-amd64-vbox.box
+vagrant up
+vagrant ssh
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025348Z" creationid="hsin" creationdate="20140111T025348Z">
+        <seg>```
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+sudo su -
+sh -c "curl https://get.docker.io/gpg | apt-key add -"
+sh -c "echo deb http://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list"
+apt-get update
+apt-get install -y lxc-docker
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T025616Z" creationid="hsin" creationdate="20140111T025616Z">
+        <seg>```
+sudo su -
+sh -c "curl https://get.docker.io/gpg | apt-key add -"
+sh -c "echo deb http://get.docker.io/ubuntu docker main &gt; /etc/apt/sources.list.d/docker.list"
+apt-get update
+apt-get install -y lxc-docker
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>```
+wget http://stedolan.github.io/jq/download/source/jq-1.3.tar.gz
+tar xzvf jq-1.3.tar.gz
+cd jq-1.3
+./configure &amp;&amp; make &amp;&amp; sudo make install
+docker inspect `dl` | jq -r '.[0].NetworkSettings.IPAddress'
+```</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113754Z" creationid="hsin" creationdate="20140111T113754Z">
+        <seg>```
+wget http://stedolan.github.io/jq/download/source/jq-1.3.tar.gz
+tar xzvf jq-1.3.tar.gz
+cd jq-1.3
+./configure &amp;&amp; make &amp;&amp; sudo make install
+docker inspect `dl` | jq -r '.[0].NetworkSettings.IPAddress'
+```</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>`docker import` and `docker commit` only set up the filesystem, not Dockerfile info like CMD or ENTRYPOINT or EXPOSE.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T032705Z" creationid="hsin" creationdate="20140111T032705Z">
+        <seg>`docker import`와 `docker commit` 파일 시스템만 셋업하고 Dockefile과 같은 CMD, ENTRYPOINT, EXPOSE는 포함하지 않는다..</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>`docker ps -a` shows running and stopped containers.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T031702Z" creationid="hsin" creationdate="20140111T031702Z">
+        <seg>`docker ps -a` 실행중인 컨테이너와 멈춰있는 컨테이너를 모두 보여준다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>`docker run` doesn't do what you think.</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T030115Z" creationid="hsin" creationdate="20140111T030115Z">
+        <seg>`docker run`은 당신이 얼핏 예상하는 그런 식으로 작동하지 않는다.</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>config.vm.network :forwarded_port, :host =&gt; port, :guest =&gt; port</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104318Z" creationid="hsin" creationdate="20140111T104318Z">
+        <seg>config.vm.network :forwarded_port, :host =&gt; port, :guest =&gt; port</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>end</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T104319Z" creationid="hsin" creationdate="20140111T104319Z">
+        <seg>end</seg>
+      </tuv>
+    </tu>
+    <tu>
+      <tuv lang="JA">
+        <seg>or</seg>
+      </tuv>
+      <tuv lang="KO" changeid="hsin" changedate="20140111T113806Z" creationid="hsin" creationdate="20140111T113751Z">
+        <seg>명령어를 사용하거나 아래 명령어를 사용합니다.</seg>
+      </tuv>
+    </tu>
+<!-- Alternative translations -->
+  </body>
+</tmx>
